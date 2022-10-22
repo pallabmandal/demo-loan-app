@@ -126,6 +126,7 @@ class LoanController extends BaseController
                     
                     $paymentAmount = $nextRepay['balance'];
                     $balanceAmount = 0.00;
+                    $nextRepay->paid_on = \Carbon\Carbon::now();
                     $nextRepay->balance = 0.00;
                     $nextRepay->paid = $nextRepay->total;
                     $nextRepay->status = config('constants.status.paid');
